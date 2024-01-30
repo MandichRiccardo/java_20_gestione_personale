@@ -10,7 +10,11 @@ public class Test{
         s.add(l5);
         System.out.println(s);
         System.out.println("inserisci il numero relativo al lavoratore di cui vuoi conoscere la paga");
-        System.out.println("la paga è " + s.getPaga(new java.util.Scanner(System.in).nextInt()-1));
+        try {
+            System.out.println("la paga è " + s.getPaga(new java.util.Scanner(System.in).nextInt() - 1));
+        }catch (NullPointerException | ArrayIndexOutOfBoundsException e){
+            System.out.println("questo lavoratore non esiste");
+        }
         System.out.println("la paga totale di questo staff è " + s.getPagaTotale());
     }
     public static Lavoratore creaLavoratore(){
