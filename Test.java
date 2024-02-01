@@ -1,21 +1,7 @@
 public class Test{
     public static void main(String[] args) {
-        Staff s = new Staff();
-        Lavoratore l1 = creaLavoratore(), l2 = creaLavoratore(), l3 = creaLavoratore(), l4 = creaLavoratore(), l5 = creaLavoratore();
-        System.out.println(s);
-        s.add(l1);
-        s.add(l2);
-        s.add(l3);
-        s.add(l4);
-        s.add(l5);
-        System.out.println(s);
-        System.out.println("inserisci il numero relativo al lavoratore di cui vuoi conoscere la paga");
-        try {
-            System.out.println("la paga è " + s.getPaga(new java.util.Scanner(System.in).nextInt() - 1));
-        }catch (NullPointerException | ArrayIndexOutOfBoundsException e){
-            System.out.println("questo lavoratore non esiste");
-        }
-        System.out.println("la paga totale di questo staff è " + s.getPagaTotale());
+        Staff s = esecuzione(new Staff(), new Lavoratore[1]);
+        System.out.println("lo stato finale dello staff è questo:\n" + s);
     }
     public static Lavoratore creaLavoratore(){
         Lavoratore l = null;
@@ -60,21 +46,7 @@ public class Test{
                     if(i+1==l.length) l = incLength(l);
                     i++;
                 }
-                System.out.println("""
-                        che tipo di lavoratore vuoi creare?
-                            0)\tannulla operazione
-                            1)\tlavoratore normale
-                            2)\tvolontario
-                            3)\tdipendente
-                            4)\tdipendente giornaliero
-                            5)\timpiegato""");
-                switch (new java.util.Scanner(System.in).nextInt()){
-                    case 1 -> l[i] = new Lavoratore();
-                    case 2 -> l[i] = new Volontario();
-                    case 3 -> l[i] = new Dipendente();
-                    case 4 -> l[i] = new Giornaliero();
-                    case 5 -> l[i] = new Impiegato();
-                }
+                l[i] = creaLavoratore();
             }
             case 2 -> {
                 for(Lavoratore i:l) System.out.println(i + "\n");
@@ -94,9 +66,7 @@ public class Test{
                     System.out.println("questo lavoratore non esiste");
                 }
             }
-            case 4 -> {
-                System.out.println(s + "\n");
-            }
+            case 4 -> System.out.println(s + "\n");
             case 5 -> {
                 System.out.println("di che lavoratore vuoi la paga?\t(conta iniziando da 0)");
                 try{
@@ -105,9 +75,7 @@ public class Test{
                     System.out.println("questo lavoratore non esiste");
                 }
             }
-            case 6 -> {
-                System.out.println("la paga totale dello staff è:\t" + s.getPagaTotale());
-            }
+            case 6 -> System.out.println("la paga totale dello staff è:\t" + s.getPagaTotale());
         }
         return esecuzione(s, l);
     }
