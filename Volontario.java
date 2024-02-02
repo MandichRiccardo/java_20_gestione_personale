@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 public class Volontario extends Lavoratore{
     private int mesiDiEsperienza;
 
@@ -9,7 +11,16 @@ public class Volontario extends Lavoratore{
     public Volontario(){
         super();
         System.out.println("quanti mesi di esperienza ha " + nome + "?");
-        this.mesiDiEsperienza = new java.util.Scanner(System.in).nextInt();
+        this.mesiDiEsperienza = getMesi();
+    }
+
+    private int getMesi(){
+        try{
+            return new java.util.Scanner(System.in).nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("devi inserire un numero");
+            return getMesi();
+        }
     }
 
     @Override

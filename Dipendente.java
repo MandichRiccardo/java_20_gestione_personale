@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 public class Dipendente extends Lavoratore{
     protected String codiceFiscale;
     protected double retribuzioneDiBase;
@@ -13,7 +15,16 @@ public class Dipendente extends Lavoratore{
         System.out.println("inserisci il codice fiscale di " + nome);
         this.codiceFiscale = new java.util.Scanner(System.in).nextLine();
         System.out.println("inserisci la retribuzione di base di " + nome);
-        this.retribuzioneDiBase = new java.util.Scanner(System.in).nextInt();
+        this.retribuzioneDiBase = getRetribuzione();
+    }
+
+    private double getRetribuzione(){
+        try{
+            return new java.util.Scanner(System.in).nextDouble();
+        }catch (InputMismatchException e){
+            System.out.println("devi inserire un numero");
+            return getRetribuzione();
+        }
     }
 
     @Override

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Test{
     public static void main(String[] args) {
         Staff s = esecuzione(new Staff(), new Lavoratore[1]);
@@ -15,12 +17,16 @@ public class Test{
                         premere 4 per un impiegato
                         """
         );
-        switch (new java.util.Scanner(System.in).nextInt()) {
-            case 0 -> l = new Lavoratore();
-            case 1 -> l = new Volontario();
-            case 2 -> l = new Dipendente();
-            case 3 -> l = new Giornaliero();
-            case 4 -> l = new Impiegato();
+        switch (new Scanner(System.in).next()) {
+            case "0" -> l = new Lavoratore();
+            case "1" -> l = new Volontario();
+            case "2" -> l = new Dipendente();
+            case "3" -> l = new Giornaliero();
+            case "4" -> l = new Impiegato();
+            default ->{
+                System.out.println("inserire una delle opzioni richieste");
+            }
+
         }
         if(l != null) return l;
         else return creaLavoratore();
