@@ -68,6 +68,7 @@ public class Test{
             }
             case 4 -> System.out.println(s + "\n");
             case 5 -> {
+                System.out.println(s);
                 System.out.println("di che lavoratore vuoi la paga?\t(conta iniziando da 0)");
                 try{
                     System.out.println("la paga è:\t" + s.getPaga(new java.util.Scanner(System.in).nextInt()));

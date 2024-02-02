@@ -38,7 +38,7 @@ public class Staff{
     }
 
     public double getPagaTotale(){
-        int paga = 0;
+        double paga = 0;
         for(int i=0;i< team.length;i++){
             try {
                 paga += getPaga(i);
@@ -55,7 +55,7 @@ public class Staff{
         for(int i=0;i<team.length;i++){
             info = info.concat("lavoratore " + (i+1) + ":\n" + team[i] + "\n");
         }
-        info += "membri:\t\t\t" + team.length;
+        info += "\nmembri:\t\t\t" + team.length;
         return info;
     }
 }

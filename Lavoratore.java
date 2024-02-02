@@ -24,9 +24,9 @@ public class Lavoratore{
 
     public String toString(){
         String info = "";
-        info += "\tnome:\t\t" + nome + "\n";
-        info += "\tindirizzo:\t\t" + indirizzo + "\n";
-        info += "\ttelefono:\t\t" + telefono + "\n";
+        info += "\tnome:\t\t\t\t" + nome + "\n";
+        info += "\tindirizzo:\t\t\t" + indirizzo + "\n";
+        info += "\ttelefono:\t\t\t" + telefono + "\n";
         return info;
     }
 }
