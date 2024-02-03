@@ -9,7 +9,7 @@ public class Impiegato extends Dipendente{
     public Impiegato() {
         super();
         System.out.println("inserisci il bonus maturato di " + nome);
-        this.bonus = new java.util.Scanner(System.in).nextInt();
+        this.bonus = getInt();
     }
 
     @Override

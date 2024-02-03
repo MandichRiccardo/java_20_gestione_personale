@@ -9,7 +9,7 @@ public class Giornaliero extends Dipendente{
     public Giornaliero() {
         super();
         System.out.println("inserisci i giorni lavorativi di " + nome);
-        this.giorni = new java.util.Scanner(System.in).nextInt();
+        this.giorni = getInt();
     }
 
     @Override

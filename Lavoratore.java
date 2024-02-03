@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 public class Lavoratore{
     protected String nome;
     protected String indirizzo;
@@ -16,6 +18,24 @@ public class Lavoratore{
         this.indirizzo = new java.util.Scanner(System.in).nextLine();
         System.out.println("inserisci il numero di telefono di " + nome);
         this.telefono = new java.util.Scanner(System.in).nextLine();
+    }
+
+    protected int getInt(){
+        try{
+            return new java.util.Scanner(System.in).nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("devi inserire un numero intero");
+            return getInt();
+        }
+    }
+
+    protected double getDouble(){
+        try{
+            return new java.util.Scanner(System.in).nextDouble();
+        }catch (InputMismatchException e){
+            System.out.println("devi inserire un numero");
+            return getDouble();
+        }
     }
 
     public double calcolaPaga(){
