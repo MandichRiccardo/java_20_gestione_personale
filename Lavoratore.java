@@ -1,6 +1,6 @@
 import java.util.InputMismatchException;
 
-public class Lavoratore{
+public abstract class Lavoratore{
     protected String nome;
     protected String indirizzo;
     protected String telefono;
@@ -38,9 +38,7 @@ public class Lavoratore{
         }
     }
 
-    public double calcolaPaga(){
-        return 0;
-    }
+    public abstract double calcolaPaga();
 
     public String toString(){
         String info = "";

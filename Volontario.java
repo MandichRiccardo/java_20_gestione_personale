@@ -13,6 +13,11 @@ public class Volontario extends Lavoratore{
     }
 
     @Override
+    public double calcolaPaga() {
+        return 0;
+    }
+
+    @Override
     public String toString() {
         String info = super.toString();
         info += "\tmesi di esperienza:\t" + mesiDiEsperienza + "\n";

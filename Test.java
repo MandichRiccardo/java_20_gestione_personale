@@ -10,7 +10,6 @@ public class Test{
         System.out.println(
                 """
                     che tipo di lavoratore vuoi creare?
-                        premere 0 per un lavoratore qualsiasi
                         premere 1 per un volontario
                         premere 2 per un dipendente
                         premere 3 per un dipendente giornaliero
@@ -18,14 +17,11 @@ public class Test{
                         """
         );
         switch (new Scanner(System.in).next()) {
-            case "0" -> l = new Lavoratore();
             case "1" -> l = new Volontario();
             case "2" -> l = new Dipendente();
             case "3" -> l = new Giornaliero();
             case "4" -> l = new Impiegato();
-            default ->{
-                System.out.println("inserire una delle opzioni richieste");
-            }
+            default -> System.out.println("inserire una delle opzioni richieste");
 
         }
         if(l != null) return l;
