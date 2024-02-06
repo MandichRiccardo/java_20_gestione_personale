@@ -1,5 +1,3 @@
-import java.util.InputMismatchException;
-
 public abstract class Lavoratore{
     protected String nome;
     protected String indirizzo;
@@ -23,7 +21,7 @@ public abstract class Lavoratore{
     protected int getInt(){
         try{
             return new java.util.Scanner(System.in).nextInt();
-        }catch (InputMismatchException e){
+        }catch (java.util.InputMismatchException e){
             System.out.println("devi inserire un numero intero");
             return getInt();
         }
@@ -32,7 +30,7 @@ public abstract class Lavoratore{
     protected double getDouble(){
         try{
             return new java.util.Scanner(System.in).nextDouble();
-        }catch (InputMismatchException e){
+        }catch (java.util.InputMismatchException e){
             System.out.println("devi inserire un numero");
             return getDouble();
         }
